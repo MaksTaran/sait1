@@ -1,0 +1,416 @@
+
+/* общие стили */
+* {
+    color:#fff ;
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    background: #fff;
+  }
+  /* убирает скрол-бар */
+  html,
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  html,
+  body-scrollbar {
+    width: 100%;
+  }
+  html::-webkit-scrollbar {
+    width: 0;
+  }
+  /* стиль первого экрана */
+  header {
+    width: 100%;
+    background-size: 100%;
+    height: 110vh;
+ background-repeat: no-repeat;
+    background-image: url(img/fon.jpg);
+  }
+  /* контайнер затемнения и размытия белым снизу */
+  .headerContainer {
+    width: 100%;
+    height: 110vh;
+   background-size: 103%;
+    background-image: url(img/zatemnenie.png);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    background-repeat: no-repeat;
+  margin-top:-10px ;
+ 
+  }
+ /* контейнер формы */
+  .formaContainer{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+  }
+  /* выравнивание ссылок навигации */
+  .nav{ 
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+  }
+  .map{
+    margin-right: 25px;
+  }
+  .logo{
+    width: 80px;
+    margin-bottom: 20px;
+  }
+  .menu{
+    width: 550px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  /* эфект наведения на ссылки */
+  .menu-link {
+    text-transform: uppercase;
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 25px;
+  }
+  .menu-link:hover{
+    color: rgb(243,148,108);
+    transition: color .5s ease ;
+  }
+.menu-link::after { 
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: block;
+    background: none repeat scroll 0 0 transparent;
+    height: 2px;
+    width: 0;
+    background: rgb(243,148,108);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  }
+  /* наведение на логотип */
+  .home::after { 
+    bottom: 20px;
+  }
+  .menu-link:hover::after { 
+    width: 100%; 
+    background-color: rgb(243,148,108);
+    left: 0; 
+  }
+  /* наведение на картинку карты */
+  .mapLink:hover::after { 
+    width: 70%; 
+  
+  }
+  .podrob:hover::after { 
+    width: 0%; 
+    background-color: rgb(243,148,108);
+    left: 0; 
+   
+  }
+  /* наведеение на ссылку футера */
+  .linkFooter:hover::after { 
+    width: 100%; 
+    background-color: rgb(76,44,59);
+    left: 0; 
+  }
+  .linkFooter:hover{
+    color:rgb(76,44,59) ;
+  }
+  .linkFooter::after { 
+    
+  
+    background: rgb(76,44,59);
+    
+   
+  }
+  /* стилизация ссылки под кнопку */
+  .podrob{
+    border-radius: 10px;
+    padding: 10px;
+    height: 50px;
+    border: 3px solid rgb(243,148,108);
+    margin-top: 80px;
+  }
+  /* ограничение цитаты */
+  .textHeader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 700px;
+  }
+  .textContainer{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+  }
+  /* стилизация маленького текста под цитатой */
+  .malText{
+    color: #cacaca;
+    margin-top: 20px;
+    font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+text-align: center;
+  }
+  .leftText{
+font-style: normal;
+font-weight: 600;
+font-size: 65px;
+text-align: center;
+  }
+/* надпись внутри инпута */
+  ::-webkit-input-placeholder{color:#ffffff;}
+::-moz-placeholder           {color:#ffffff;}/* Firefox 19+ */
+:-moz-placeholder            {color:#ffffff;}/* Firefox 18- */
+:-ms-input-placeholder       {color:#ffffff;}
+
+input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.5s ease;}
+input::-moz-placeholder                {opacity: 1; transition: opacity 0.5s ease;}
+input:-moz-placeholder                 {opacity: 1; transition: opacity 0.5s ease;}
+input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.5s ease;}
+input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.5s ease;}
+input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.5s ease;}
+input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.5s ease;}
+input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.5s ease;}
+/* конец стиля надписи */
+/* стиль всех инпутов */
+input{
+  font-family: 'Raleway', sans-serif;
+font-size: 20px;
+  outline: none;
+  padding: 5px;
+  width: 410px;
+  height: 50px;
+  background: #e96443;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #904e95c7, #e96443c5);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #904e95c7, #e96443c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ border: none;
+border-radius: 5px;
+    color: #fff;
+  }
+  .date{
+    cursor: pointer;
+    width: 170px;
+  }
+  /* дизайн формы заполнения */
+  form{
+    padding: 0px 20px;
+border-radius: 10px;
+
+    display: flex;
+   justify-content: center;
+    background-color: rgba(255, 254, 254, 0.7);
+    height: 605px;
+    display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+  }
+  .dateSelect{
+    display: flex;
+    width: 410px;
+    justify-content: space-between
+  }
+.select2{
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+p .black{
+  font-size: 20px;
+  font-weight: 600;
+}
+.black{
+  font-family: 'Raleway', sans-serif;
+  color: #000000;
+}
+/* кнопка с анимацией */
+.button {
+  color: #fff;
+  margin-top: 20px;
+height: 3em;
+width: 8em;
+font-size: 1em;
+display: flex;
+position: relative;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+border-radius: 0.25em;
+background-color: #fff;
+
+cursor: pointer;
+z-index: 2;
+}
+.button::after {
+content: '';
+height: calc(100% + 10px);
+width: calc(100% + 10px);
+position: absolute;
+top: -0.225em;
+left: -0.225em;
+z-index: -11;
+border-radius: 0.25em;
+background: linear-gradient(90deg,
+#e96443c7,#904e95c7);
+background-size: 300% 100%;
+animation: animate 1.5s ease infinite paused;
+cursor: pointer;
+}
+/* анимация кнопки */
+@keyframes animate {
+to {
+  background-position: 0% 0%;
+}
+50% {
+  background-position: 98% 98%;
+}
+100% {
+  background-position: 0% 0%;
+}
+}
+.button:hover::after{
+  animation-play-state: running;
+}
+.dateText{
+  font-size: 20px;
+}
+.zayv{
+  cursor: pointer;
+  border: none;
+  position: relative;
+  height: 5em;
+  width: 10em;
+  background: initial;
+}
+/* фото календаря в инпуте даты */
+::-webkit-calendar-picker-indicator {
+cursor: pointer;
+  color: transparent;
+  background: url(img/kalendar.png) no-repeat center;
+  background-size: contain;
+}
+/* конец хедера и основной страницы */
+
+/* начало мэйна */
+/* блок в майне с картинками */
+.bloki{
+  padding: 30px 10px 0px 10px;
+ margin-bottom: 50px;
+  width: 100%;
+display: flex;
+justify-content: space-around;
+}
+
+.blockImg{
+  width: 300px;
+  height: 200px;
+}
+/* блок картинка и текст */
+.block{
+height: 600px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(148,132,158);
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+.text{
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  text-indent: 20px;
+  line-height: 22px;
+  height: 200px;
+  margin: 10px;
+  width: 300px;
+}
+/* высота главного блока */
+main{
+  height: fit-content;
+}
+.zaglav{
+margin: 10px 0px;
+}
+/* читать далее */
+.dalee{
+  font-size: 14px;
+  text-transform: none;
+  position: relative;
+  left: 110px;
+margin-top: 80px;
+  margin-bottom: 20px;
+}
+/* нижний контейнер */
+.navFotter{
+
+  text-transform: uppercase;
+width: 50%;
+  display: flex;
+  justify-content: space-around;
+ 
+}
+.linkFooter{
+  color: #ffffff;  
+  font-size: 20px;
+  
+}
+/* наведение на футер */
+.navContainerFooter{
+  width: 100%;
+  margin-top:30px ;
+  background-color: rgba(253, 134, 75, 0.712);
+  border: 1px solid #000;
+ height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spisok{
+  color: #000000;
+}
+li{
+  font-size: 18px;
+  margin-top: 20px;
+  color:#000000;
+  font-family: 'Raleway', sans-serif;
+}
+/* ограниченеи текста списка */
+.textSpisok{
+  word-wrap:break-word;
+  text-align: justify;
+margin-bottom: 100px;
+width: 800px;
+}
+.spisokContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+/* ширина картинки карты с туром */
+.turImg{
+  width: 650px;
+}
+/* отступ снизу */
+.marginBottom{
+  margin-bottom: 30px;
+}
